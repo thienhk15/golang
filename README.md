@@ -6,14 +6,6 @@
 <a href="https://jmoiron.github.io/sqlx/"><img src="https://img.shields.io/badge/sqlx-v1.35-green" height="20"></a>
 <a href="https://github.com/swaggo/swag"><img src="https://img.shields.io/badge/swagger-go-brightgreen" height="20"></a>
 
-## Features
-
-- Organising Golang project structure by kind [reference](https://developer20.com/how-to-structure-go-code/)
-- API framework using [Gin Gonic](https://github.com/gin-gonic/gin)
-- Connect with Postgres database using [sqlx](https://jmoiron.github.io/sqlx/)
-- API document with Swagger
-- Sample `Dockerfile` to package application as Docker image.
-
 ## Directory Structure
 
 ```bash
