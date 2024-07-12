@@ -1,0 +1,101 @@
+basePath: /api
+definitions:
+  models.User:
+    properties:
+      jphone:
+        type: string
+      juser_id:
+        type: integer
+      juser_name:
+        type: string
+    required:
+    - jphone
+    - juser_name
+    type: object
+host: localhost:9091
+info:
+  contact:
+    email: son.nguyen.2@neyu.co
+    name: Son Nguyen
+  description: This is a sample document for API.
+  license:
+    name: Apache 2.0
+    url: http://www.apache.org/licenses/LICENSE-2.0.html
+  termsOfService: http://swagger.io/terms/
+  title: Neyu Document API
+  version: "1.0"
+paths:
+  /user:
+    get:
+      consumes:
+      - application/json
+      description: Get list user
+      parameters:
+      - description: Offset
+        in: query
+        name: offset
+        required: true
+        type: integer
+      - description: Limit
+        in: query
+        name: limit
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/models.User'
+            type: array
+      summary: Get user data
+      tags:
+      - user
+    post:
+      consumes:
+      - application/json
+      description: Insert user data
+      parameters:
+      - description: User body
+        in: body
+        name: offset
+        required: true
+        schema:
+          $ref: '#/definitions/models.User'
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: integer
+      summary: Insert user data
+      tags:
+      - user
+  /user/batch:
+    post:
+      consumes:
+      - application/json
+      description: Insert batch data
+      parameters:
+      - description: list user body
+        in: body
+        name: offset
+        required: true
+        schema:
+          items:
+            $ref: '#/definitions/models.User'
+          type: array
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            type: integer
+      summary: Insert batch data
+      tags:
+      - user
+swagger: "2.0"

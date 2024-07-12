@@ -1,0 +1,67 @@
+server:
+  mode: dev
+  port: 9091
+database:
+  host: 127.0.0.1
+  port: 5432
+  user: postgres
+  password: 123456
+  dbname: store
+  sslmode: disable
+  max-open-conn: 5
+  max-idle-conn: 2
+
+mongodb:
+  is_use: true
+  #url: "mongodb://localhost:27017/"
+  # database_name: "qa_module"
+  url: "mongodb://qa_acc:qa_acc1324@127.0.0.1:27017/qa_module_db?replicaSet=dev-rs1"
+  database_name: "qa_module_db"
+  min_pool_size: 2
+  max_pool_size: 10
+  max_conn_idle_time: 30
+
+  cors:
+  enabled: true
+  allowed-origins:
+    - "*"
+  allowed-methods:
+    - GET
+    - POST
+    - PUT
+    - DELETE
+    - OPTIONS
+  allowed-headers:
+    - Origin
+    - Accept
+    - Content-Type
+    - Authorization
+    - Tenant-Id
+  exposed-headers:
+    - Tenant-Id
+  allow-credentials: true
+  max-age: 0
+# kafka:
+#   producer:
+#     bootstrap-servers: localhost:9093
+#     security-protocol: SASL_PLAINTEXT
+#     sasl-mechanisms: mechanism
+#     sasl-username: user
+#     sasl-password: pass
+#     acks: all
+#     topics-foo1:
+#       name: foo1
+#       partition: 1
+#   consumer:
+#     bootstrap-servers: localhost:9093
+#     security-protocol: SASL_PLAINTEXT
+#     sasl-mechanisms: mechanism
+#     sasl-username: user
+#     sasl-password: pass
+#     acks: all
+#     group_id: neyu
+#     topics-foo1:
+#       name: foo1
+# cronjob:
+#   time-sample-cron: 0 1 * * * *
+# balance: 500
